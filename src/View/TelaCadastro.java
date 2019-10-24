@@ -78,8 +78,8 @@ public class TelaCadastro extends javax.swing.JFrame {
     private void gravaProduto(){
         String descricao = tfProDescricao.getText();
         int estoque = (int) spProEstoque.getValue();
-        Double custo = Double.parseDouble(tfProVlCusto.getText());
-        Double valor = Double.parseDouble(tfProVlVenda.getText());
+        String custo =tfProVlCusto.getText();
+        String valor = tfProVlVenda.getText();
         System.out.println(new Produto(descricao, estoque, valor, custo));
     }
     

@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Util.Configura;
 import View.TelaCadastro;
 
 /**
@@ -13,7 +14,7 @@ import View.TelaCadastro;
  */
 public class Principal {
     public static void main(String[] args) {
-        //Configura.LookAndFeel("Windows Classic");
+        Configura.LookAndFeel("Nimbus");
         new TelaCadastro().setVisible(true);
         DAO.ConnectionFactory.getConnection();
     }

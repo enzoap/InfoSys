@@ -15,10 +15,10 @@ public class Produto {
     private String descricao;
     private int estoque;
     private boolean ativo;
-    private double valor;
-    private double custo;
+    private String valor;
+    private String custo;
 
-    public Produto (String descricao, int estoque, Double valor,Double custo){
+    public Produto (String descricao, int estoque, String valor,String custo){
         this.descricao = descricao;
         this.estoque = estoque;
         this.valor = valor;
@@ -49,19 +49,19 @@ public class Produto {
         this.ativo = ativo;
     }
 
-    public Double getValor() {
+    public String getValor() {
         return valor;
     }
 
-    public void setValor(Double valor) {
+    public void setValor(String valor) {
         this.valor = valor;
     }
 
-    public Double getCusto() {
+    public String getCusto() {
         return custo;
     }
 
-    public void setCusto(Double custo) {
+    public void setCusto(String custo) {
         this.custo = custo;
     }
     

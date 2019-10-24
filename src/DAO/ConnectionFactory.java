@@ -19,6 +19,8 @@ public class ConnectionFactory {
     
     public static Connection getConnection (){
         try {
+            System.out.println("Conexão estabelecida");
+
             return DriverManager.getConnection(URL);
         }catch (SQLException e){
             throw new RuntimeException("Erro na conexão");
