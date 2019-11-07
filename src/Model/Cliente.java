@@ -5,11 +5,14 @@
  */
 package Model;
 
+import DAO.ClienteDAO;
+
 /**
  *
  * @author Aluno
  */
 public class Cliente {
+    private int codigo = 0;
     private String nome = null;
     private String cpf = null;
     private String fone = null;
@@ -24,8 +27,15 @@ public class Cliente {
     public String getNome() {
         return nome;
     }
-    
 
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+    
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -77,9 +87,8 @@ public class Cliente {
         setFone(fone);
         setCelular(celular);
         setEmail(email);
+        gravar();
     }
-    
-    
     
     @Override 
     public String toString (){
@@ -90,5 +99,11 @@ public class Cliente {
               "Celular.:[" + getCelular() + "]\n" +
               "Email...:" + getEmail() + "]\n";
         return ret;
+    }
+    
+    private void gravar(){
+        ClienteDAO dao = new ClienteDAO();
+        int codigo = dao.create(this);
+        if (codigo > 0) setCodigo(codigo);
     }
 }
